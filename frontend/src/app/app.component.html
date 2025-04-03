@@ -1,0 +1,39 @@
+<div >
+  <!-- Navbar -->
+  <app-navbar (toggleSidenav)="sidenav.toggle()"></app-navbar>
+
+  <mat-sidenav-container class="app-container">
+
+
+    <!-- Sidebar -->
+    <mat-sidenav #sidenav mode="side" class="sidenav" opened>
+      <mat-nav-list>
+        <mat-list-item routerLink="/tasks">
+          <mat-icon>list</mat-icon>
+          <span>Lista de Tareas</span>
+        </mat-list-item>
+        <a mat-list-item routerLink="/tasks/create">
+          <mat-icon>add</mat-icon>
+          <span>Nueva Tarea</span>
+        </a>
+        <a mat-list-item routerLink="/users/create">
+          <mat-icon>person_add</mat-icon>
+          <span>Nuevo Usuario</span>
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <!-- Contenido principal -->
+    <mat-sidenav-content class="content">
+      <div class="main-content">
+        <router-outlet></router-outlet>
+      </div>
+
+      <!-- Footer -->
+      <app-footer></app-footer>
+    </mat-sidenav-content>
+
+
+
+  </mat-sidenav-container>
+</div>

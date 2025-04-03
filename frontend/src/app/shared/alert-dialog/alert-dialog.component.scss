@@ -1,0 +1,25 @@
+.custom-dialog {
+  text-align: center;
+  background-color: var(--mat-sys-secondary-container);
+  padding-top: 20px;
+
+  h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .info-icon {
+    font-size: 32px;
+  }
+
+  mat-dialog-content {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  mat-dialog-actions {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+}

@@ -1,0 +1,60 @@
+<!-- Formulario Creación Tarea -->
+
+<mat-card class="task-card">
+    <mat-card-title>Asignar Tarea</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+        
+        <!-- Selección de usuario -->
+        <mat-form-field>
+          <mat-label>Usuario</mat-label>
+          <mat-select formControlName="userId">
+            @for (user of users; track user) {
+              <mat-option [value]="user.id">{{ user.name }}</mat-option>
+            }
+          </mat-select>
+          <mat-error *ngIf="taskForm.get('user')?.invalid">Seleccione un usuario</mat-error>
+        </mat-form-field>
+  
+        <!-- Título de la tarea -->
+        <mat-form-field>
+          <mat-label>Título</mat-label>
+          <input matInput formControlName="title" placeholder="Título de la tarea">
+          <mat-error *ngIf="taskForm.get('title')?.invalid">El título es obligatorio</mat-error>
+        </mat-form-field>
+  
+        <!-- Descripción de la tarea -->
+        <mat-form-field>
+          <mat-label>Descripción</mat-label>
+          <textarea matInput formControlName="description" placeholder="Descripción"></textarea>
+        </mat-form-field>
+  
+        <!-- Prioridad -->
+        <mat-form-field>
+          <mat-label>Prioridad</mat-label>
+          <mat-select formControlName="priority">
+            <mat-option value="Alta">Alta</mat-option>
+            <mat-option value="Media">Media</mat-option>
+            <mat-option value="Baja">Baja</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <!-- Estado -->
+        <mat-form-field>
+          <mat-label>Estado</mat-label>
+          <mat-select formControlName="status">
+            <mat-option value="pendiente">Pendiente</mat-option>
+            <mat-option value="en-progreso">En Progreso</mat-option>
+            <mat-option value="completada">Completada</mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <!-- Botón de envío -->
+        <button mat-raised-button color="primary" type="submit" [disabled]="taskForm.invalid || buttonDisabled">
+          Asignar Tarea
+        </button>
+  
+      </form>
+    </mat-card-content>
+  </mat-card>
+  

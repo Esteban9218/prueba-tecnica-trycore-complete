@@ -1,0 +1,24 @@
+<!-- <mat-dialog-content>
+    <p>{{ data.message }}</p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button (click)="close()">Aceptar</button>
+</mat-dialog-actions> -->
+
+
+<div class="custom-dialog">
+    <h2 mat-dialog-title>
+        <mat-icon class="info-icon">{{ data.icon || 'info' }}</mat-icon>
+        {{ data.title || 'Información' }}
+    </h2>
+
+    <mat-dialog-content>
+        <p>{{ data.message }}</p>
+    </mat-dialog-content>
+
+    <mat-dialog-actions align="center">
+        <button mat-button (click)="close()" color="primary">
+            Aceptar
+        </button>
+    </mat-dialog-actions>
+</div>

@@ -1,0 +1,33 @@
+.mat-toolbar {
+  background-color: var(--mat-sys-primary-container);
+  height: 72px;
+  a {
+    color: var(--mat-sys-primary);
+  }
+}
+
+.title {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+// mat-sidenav-container {
+//   margin-top: 72px;
+//   height: calc(100vh - 72px);
+//   position: fixed;
+//   top: 0;
+// }
+
+// .mat-list-item {
+//   display: flex;
+//   align-items: center;
+//   gap: 8px;
+// }
+
+// .mat-icon {
+//   font-size: 24px;
+// }

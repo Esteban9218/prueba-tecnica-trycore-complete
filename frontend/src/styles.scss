@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+
+@use '@angular/material' as mat;
+
+// Habilitar el sistema de temas de Material 3
+@include mat.core();
+
+// Importar el tema Cyan-Orange
+// @include mat.all-component-themes(mat.$cyan-orange-theme);
+@import '@angular/material/prebuilt-themes/cyan-orange.css';
+
+html, body { height: 100%; background-color: #101414;}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
